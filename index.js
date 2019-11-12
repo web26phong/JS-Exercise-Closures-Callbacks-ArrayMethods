@@ -269,13 +269,11 @@ function tallyUpDonations(runners) {
  * etc
 */
 function counterMaker() {
-  // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
+  let count = 0;
+  return function counter() {
+    return count++;
   }
-  // BROKEN CODE ENDS
-}
+}//closures allow this function to work. explained at this link here at 6 minutes 35 seconds: https://youtu.be/AgBoMqDO-08?t=395
 
 /**
  * ### Challenge `counterMakerWithLimit`
