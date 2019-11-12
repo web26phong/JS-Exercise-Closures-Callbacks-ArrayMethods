@@ -147,28 +147,28 @@ function processContains(item, list, callback) {
   return callback(answer);
 }
 
-// /**
-//  * ### Challenge `processDuplicateFree`
-//  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
-//  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
-//  * 
-//  * @instructions
-//  * Implement a higher-order function called `processDuplicateFree`.
-//  * It takes two arguments:
-//  * @param list array of elements of any kind.
-//  * @param callback function that takes an array as its argument.
-//  * @returns the result of invoking `callback` passing a de-duped version of `list`.
-//  * 
-//  * Examples of usage of this higher-order function:
-//  * [1] Invoking `processDuplicateFree` passing `[1,1,1,2]` and `(arr) => arr`,
-//  * should return `[1,2]`.
-//  * 
-//  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
-//  * should return 3.
-// */
-// function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-//   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
-// }
+/**
+ * ### Challenge `processDuplicateFree`
+ * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
+ * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
+ * 
+ * @instructions
+ * Implement a higher-order function called `processDuplicateFree`.
+ * It takes two arguments:
+ * @param list array of elements of any kind.
+ * @param callback function that takes an array as its argument.
+ * @returns the result of invoking `callback` passing a de-duped version of `list`.
+ * 
+ * Examples of usage of this higher-order function:
+ * [1] Invoking `processDuplicateFree` passing `[1,1,1,2]` and `(arr) => arr`,
+ * should return `[1,2]`.
+ * 
+ * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
+ * should return 3.
+*/
+function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+}
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -228,8 +228,11 @@ function firstNamesAllCaps(runners) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(runners, tShirtSize) {
+  let newArray = runners.filter(function(element){
+    return element.shirt_size === tShirtSize;
+  })
+  return newArray;
 }
 
 /**
@@ -242,8 +245,11 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {
+  let totalDonations = runners.reduce(function(accumulator, element){
+    return element.donation + accumulator;
+  }, 0);
+  return totalDonations;
 }
 
 /////////////// CLOSURES ///////////////
