@@ -137,8 +137,14 @@ function processProduct(num1, num2, callback) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
+function processContains(item, list, callback) {
+  let answer = false;
+  list.forEach(function(element){
+    if (item === element){
+      return answer = true;
+    }
+  })
+  return callback(answer);
 }
 
 /**
